@@ -9,6 +9,7 @@ public class LookupArrayServiceTest {
         testRunner.test2();
         testRunner.test3();
         testRunner.test4();
+        testRunner.test5();
     }
 
 
@@ -63,5 +64,18 @@ public class LookupArrayServiceTest {
             System.out.println("TEST4 Wrong. Entered value index expected " + expectedResult + " but actual index " + actualResult);
         }
 
+    }
+
+    public void test5(){
+        LookupArrayService service = new LookupArrayService();
+        int[] array = {7, 2, 1, 10, 9};
+        System.out.println(Arrays.toString(array));
+        int expectedResult = 2;
+        int actualResult = service.indexOfMin(array);
+        if (expectedResult == actualResult) {
+            System.out.println("TEST5 Correct. Min number index = " + actualResult);
+        } else {
+            System.out.println("TEST5 Wrong. Min value index expected " + expectedResult + " but actual index " + actualResult);
+        }
     }
 }

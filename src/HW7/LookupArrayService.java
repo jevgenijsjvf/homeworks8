@@ -54,10 +54,30 @@ public class LookupArrayService {
                 if (array[i] > max) {
                     max = array[i];
                     maxNumberIndex = index;
-               }index++;
+                }index++;
             }
         }
         return maxNumberIndex;
+    }
+
+    public int indexOfMin(int[] array) {
+        int index;
+        int min;
+        int minNumberIndex = 0;
+        if (array.length == 0) {
+            System.out.println("Array is empty");
+            return -1;
+        } else {
+            index =0;
+            min = array[0];
+            for (int i = 0; i < array.length; i++) {
+                if (array[i] < min) {
+                    min = array[i];
+                    minNumberIndex = index;
+                }index++;
+            }
+        }
+        return minNumberIndex;
     }
 
     public int indexOf (int[] array, int value) {
