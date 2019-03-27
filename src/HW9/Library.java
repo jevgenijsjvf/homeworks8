@@ -8,10 +8,8 @@ public class Library{
 
    private List<Book> books = new ArrayList<>();
 
-
-   public void createBook (Book book) {
-
-      books.add(book);
+   public void createBook (String author, String title) {
+     books.add(1,"aaa");
    }
    public void removeBookFFromLibrary() {}
    public void findBookInLibraryByTitle() {}
