@@ -2,11 +2,6 @@ package HW7;
 
 public class LookupArrayService {
 
-    //private int valueIndex;
-
-//    public int getValueIndex() {
-//        return valueIndex;
-//    }
 
     public int findMax(int[] array) {
         int max;
