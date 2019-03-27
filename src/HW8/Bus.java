@@ -4,6 +4,7 @@ import java.util.Objects;
 
 public class Bus extends Cars{
     protected int numberOfSeats;
+
     public Bus (String model, String marka, int yearsOfIssue, int numberOfSeats) {
         super(model, marka, yearsOfIssue);
         this.numberOfSeats=numberOfSeats;
