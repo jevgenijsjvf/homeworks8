@@ -8,12 +8,30 @@ public class Library{
 
    private List<Book> books = new ArrayList<>();
 
-   public void createBook (String author, String title) {
-     books.add(1,"aaa");
+
+   public void createBook (Book book) {
+     books.add(book);
    }
-   public void removeBookFFromLibrary() {}
-   public void findBookInLibraryByTitle() {}
-   public void findBookInLibraryByAuthor () {}
+   public void removeBookFFromLibrary(Book book) {
+      books.remove(book);
+   }
+   public void findBookInLibraryByTitle( String title) {
+     for (int i =0;i<books.size();i++ ) {
+        books.get(i).getTitle();
+        if (books.get(i).getTitle().equals(title)) {
+           System.out.println("Book which you are search: "+books.get(i));
+        }
+     }
+   }
+
+   public void findBookInLibraryByAuthor (String author) {
+      for (int i =0;i<books.size();i++ ) {
+         books.get(i).getAuthor();
+         if (books.get(i).getAuthor().equals(author)) {
+            System.out.println("Book which you are search: "+books.get(i));
+         }
+      }
+   }
 
 
    @Override
@@ -39,4 +57,6 @@ public class Library{
               "books=" + books +
               '}';
    }
+
+
 }
