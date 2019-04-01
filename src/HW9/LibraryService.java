@@ -12,25 +12,26 @@ public class LibraryService {
         Book book = new Book("vasilijs.f.", "Гредущие мечты");
         Library library = new Library();
         library.createBook(book);
-        Book book1 = new Book("Пушкип", "Евгений Онегин");
+        Book book1 = new Book("Пушкин", "Евгений Онегин");
         library.createBook(book1);
         Book book2 = new Book("Толстой", "Война и Мир");
         library.createBook(book2);
-        Book book3 = new Book("Пушкип", "Жених");
+        Book book3 = new Book("Пушкин", "Жених");
         library.createBook(book3);
         System.out.println(library.getBooks());
         library.removeBook(book);
         System.out.println(library.getBooks());
         System.out.println();
         System.out.println(library.findByTitle("Война и Мир"));
-        System.out.println(library.findByAuthor("Пушкип"));
+        System.out.println(library.findByAuthor("Пушкин"));
         System.out.println();
+        System.out.println("****************Test*****************************");
         int expectedResultOfListSize = 3;
-        int actualResulOfListSize = library.getBooks().size();
-        if (expectedResultOfListSize == actualResulOfListSize) {
-            System.out.println("TEST CORRECT.List size are " + actualResulOfListSize + ".");
+        int actualResultOfListSize = library.getBooks().size();
+        if (expectedResultOfListSize == actualResultOfListSize) {
+            System.out.println("TEST CORRECT.List size are " + actualResultOfListSize + ".");
         } else {
-            System.out.println("Test wrong. Expected size " + expectedResultOfListSize + ", but actual size " + actualResulOfListSize);
+            System.out.println("Test wrong. Expected size " + expectedResultOfListSize + ", but actual size " + actualResultOfListSize);
         }
     }
 }

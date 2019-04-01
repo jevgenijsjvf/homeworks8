@@ -19,7 +19,6 @@ public class Library {
 
     public Book findByTitle(String title) {
         for (int i = 0; i < books.size(); i++) {
-            books.get(i).getTitle();
             if (books.get(i).getTitle().equals(title)) {
                 return books.get(i);
             }
@@ -28,15 +27,16 @@ public class Library {
     }
 
 
-    public Book findByAuthor(String author) {
+    public List<Book> findByAuthor(String author) {
+        List<Book> findBook = new ArrayList<>();
+        int x = 0;
         for (int i = 0; i < books.size(); i++) {
-            books.get(i).getAuthor();
             if (books.get(i).getAuthor().equals(author)) {
-                System.out.println("Book which you are search: " + books.get(i));
-                return books.get(i);
+                findBook.add(x, books.get(i));
+                x++;
             }
         }
-        return null;
+        return findBook;
     }
 
 
