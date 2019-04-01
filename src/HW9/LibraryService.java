@@ -3,7 +3,7 @@ package HW9;
 
 public class LibraryService {
     public static void main(String[] args) {
-        LibraryService testRunner= new LibraryService();
+        LibraryService testRunner = new LibraryService();
         testRunner.test1();
 
     }
@@ -19,18 +19,18 @@ public class LibraryService {
         Book book3 = new Book("Пушкип", "Жених");
         library.createBook(book3);
         System.out.println(library.getBooks());
-        library.removeBookFFromLibrary(book);
+        library.removeBook(book);
         System.out.println(library.getBooks());
         System.out.println();
-        library.findBookInLibraryByTitle("Война и Мир");
-        library.findBookInLibraryByAuthor("Пушкип");
+        System.out.println(library.findByTitle("Война и Мир"));
+        System.out.println(library.findByAuthor("Пушкип"));
         System.out.println();
-        int expectedResultOfListSize  =3;
+        int expectedResultOfListSize = 3;
         int actualResulOfListSize = library.getBooks().size();
-        if (expectedResultOfListSize==actualResulOfListSize) {
-            System.out.println("TEST CORRECT.List size are " +actualResulOfListSize+".");
+        if (expectedResultOfListSize == actualResulOfListSize) {
+            System.out.println("TEST CORRECT.List size are " + actualResulOfListSize + ".");
         } else {
-            System.out.println("Test wrong. Expected size "+expectedResultOfListSize + ", but actual size "+actualResulOfListSize);
+            System.out.println("Test wrong. Expected size " + expectedResultOfListSize + ", but actual size " + actualResulOfListSize);
         }
     }
 }
