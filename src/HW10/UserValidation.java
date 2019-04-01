@@ -1,5 +1,7 @@
 package HW10;
 
+import javax.xml.bind.ValidationException;
+
 public class UserValidation {
     User user;
 
@@ -29,5 +31,8 @@ public class UserValidation {
         }
     }
 
+    public static String dataControl () {
+        throw new ValidationException("Your entered value not correct.");
 
+    }
 }
