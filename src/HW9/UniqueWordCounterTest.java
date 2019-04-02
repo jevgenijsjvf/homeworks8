@@ -13,15 +13,15 @@ public class UniqueWordCounterTest {
         counter.addWord("mango");
         counter.addWord("apple");
         counter.addWord("apple");
-        counter.findMaxValueInMap();
         counter.printToConsole();
+        System.out.println(counter.findMaxString());
 
-        int expectedResult = 4;
-        int actualResult = counter.findMaxValueInMap();
+        int expectedResult = 1;
+        int actualResult = counter.findMaxString().size();//
         if (expectedResult == actualResult) {
             System.out.println("Test is correct.");
         } else {
-            System.out.println("Test is wrong. Expected Max value in map must be: " + expectedResult + " but, we have: " + actualResult);
+            System.out.println("Test is wrong. Expected elements in find Max maps must be: " + expectedResult + " but, we have: " + actualResult);
         }
-    }
+   }
 }

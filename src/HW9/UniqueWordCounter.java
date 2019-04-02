@@ -23,26 +23,24 @@ public class UniqueWordCounter {
         return value;
     }
 
-    public int findMaxValueInMap() {
-        int max = 0;
-        for (int value : stringOfWords.values()) {
-            if (value > max) {
-                max = value;
-            }
-        }
-        return max;
-    }
-
     public void printToConsole() {
         System.out.println(stringOfWords);
 
+    }
+
+    public Map<String, Integer> findMaxString() {
+        Map<String,Integer> maxString = new HashMap<>();
+        int max = 0;
         for (Map.Entry<String, Integer> entry : stringOfWords.entrySet()) {
-            if (entry.getValue() == findMaxValueInMap()) {
-                System.out.println("Max value in map is: " + entry.getKey());
+            for (int value : stringOfWords.values()) {
+                if (value > max) {
+                    max = value;
+                  maxString.put(entry.getKey(),max);
+
+                }
             }
-
         }
-
+       return maxString;
     }
 
 
