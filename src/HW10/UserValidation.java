@@ -1,38 +1,44 @@
 package HW10;
 
-import javax.xml.bind.ValidationException;
-
 public class UserValidation {
     User user;
 
-    public void minLenghtName (User user) {
-        if (user.getName().length() >= 3 && user.getName().length() <= 15) {
-            System.out.println("Your name OK ");
-        } else {
-            System.out.println("Name must be greaten then 3 but less then 15 ");
 
+    public void minLenghtName(User user) throws ValidationExceprion {
+
+        if (user.getName().length() < 3)
+            throw new ValidationExceprion("Name cannot contain less then 3 char");
+        else if (user.getName().length() > 15)
+            throw new ValidationExceprion("Name must contain less that 15 char");
+        else if (user.getName().length() >= 3 && user.getName().length() <= 15) {
+            System.out.println("Your name OK ");
+        }
+
+    }
+
+    public void minLenghtLastName(User user) throws ValidationExceprion {
+
+        if (user.getLastName().length() < 3)
+            throw new ValidationExceprion("Last name cannot contain less then 3 char");
+        else if (user.getLastName().length() > 15)
+            throw new ValidationExceprion("Last name must contain less that 15 char ");
+        else if (user.getLastName().length() >= 3 && user.getLastName().length() <= 15) {
+            System.out.println("Your last name entered correctly");
         }
     }
 
-    public void minLenghtLastName (User user) {
-        if (user.getLastName().length() >= 3 && user.getLastName().length() <= 15) {
-            System.out.println("Your name OK ");
-        } else {
-            System.out.println("Name must be greaten then 3 but less then 15 ");
+    public void ageControl(User user) throws ValidationExceprion {
 
-        }
-    }
-
-    public void ageControl (User user) {
-        if (user.getAge() >=0 && user.getAge()<=120) {
+        if (user.getAge() < 0)
+            throw new ValidationExceprion("Age cannot be less then 0");
+        else if (user.getAge() > 120)
+            throw new ValidationExceprion("If your age is 120, that means that you doesn't exist");
+        else if (user.getAge() > 0 && user.getAge() < 120) {
             System.out.println("Your age is perfect");
-        } else {
-            System.out.println("You die or not born.");
         }
-    }
 
-    public static String dataControl () {
-        throw new ValidationException("Your entered value not correct.");
 
     }
+
+
 }
