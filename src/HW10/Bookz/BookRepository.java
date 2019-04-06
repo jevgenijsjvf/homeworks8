@@ -1,70 +1,51 @@
 package HW10.Bookz;
 
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
 
-public class BookRepository implements Repository<Book>{
+public class BookRepository implements Repository<Book> {
 
-    Map<String,Book> books = new HashMap<>();
-    String number;
+    Map<String, Book> books = new HashMap<>();
 
     @Override
     public List<Book> findAll() {
-        return null;
+        List<Book> printAll = new ArrayList<>();
+        for (Map.Entry<String, Book> entry : books.entrySet()) {
+            printAll.add(entry.getValue());
+        }
+        return printAll;
     }
 
     @Override
-    public Book findById(String id) {
-        for (Iterator<Map.Entry<String,Book>> del=books.entrySet().iterator(); del.hasNext();){
-            Map.Entry<String,Book> entry = del.next();
-            if (entry.getValue().getId().equals(id)) {
-                return entry.getValue();
-            }
-        } return null;
+    public Book findById(String id) throws ItemNotFoundException {
+        if (books.containsKey(id)) {
+            return books.get(id);
+        } else {
+           throw new ItemNotFoundException(id);
+        }
     }
 
     @Override
     public void save(Book item) {
-        books.put(number,item);
+        String id = item.getId();
+        books.put(id, item);
     }
 
     @Override
-    public void delete(String id) {
-        for (Iterator<Map.Entry<String,Book>> del=books.entrySet().iterator(); del.hasNext();){
-            Map.Entry<String,Book> entry = del.next();
-            if (entry.getValue().getId().equals(id)) {
-                del.remove();
-            }
+    public void delete(String id) throws ItemNotFoundException {
+
+        if (books.containsKey(id)) {
+            books.remove(id);
+        } else {
+            throw new ItemNotFoundException(id);
         }
     }
 
     public void printToConsole() {
-        System.out.println(books);
-    }
-
-    public static void main(String[] args) {
-       BookRepository bookRepository = new BookRepository();
-       bookRepository.number = "10";
-       Book item = new Book("1","Onegins","Pushkin",256);
-       bookRepository.save(item);
-       bookRepository.number = "20";
-       Book item1 = new Book("2","Voina i mir","Tolstoj",321);
-       bookRepository.save(item1);
-       bookRepository.number = "30";
-       Book item2 = new Book("3","Gore ot uma","Griboedov",121);
-       bookRepository.save(item2);
-       bookRepository.printToConsole();
-       bookRepository.delete("2");
-       bookRepository.printToConsole();
-       System.out.println(bookRepository.findById("1"));
-
-
-
-
-
+        System.out.println("Items on map: " + books);
     }
 
 }

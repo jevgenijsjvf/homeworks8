@@ -2,7 +2,7 @@ package HW10.Bookz;
 
 import java.util.Objects;
 
-public class Book{
+public class Book {
     private String id;
     private String name;
     private String author;

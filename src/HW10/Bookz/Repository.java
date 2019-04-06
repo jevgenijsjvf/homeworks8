@@ -5,12 +5,13 @@ import java.util.List;
 
 public interface Repository<T extends Book> {
 
-   List<T> findAll();
-   T findById (String id);
-   void save (T item);
-   void delete(String id);
+    List<T> findAll();
 
+    T findById(String id) throws ItemNotFoundException;
 
+    void save(T item);
+
+    void delete(String id) throws ItemNotFoundException;
 
 
 }
