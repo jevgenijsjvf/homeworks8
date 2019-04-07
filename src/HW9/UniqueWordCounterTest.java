@@ -16,12 +16,12 @@ public class UniqueWordCounterTest {
         counter.printToConsole();
         System.out.println(counter.findMaxString());
 
-        int expectedResult = 1;
-        int actualResult = counter.findMaxString().size();//
-        if (expectedResult == actualResult) {
-            System.out.println("Test is correct.");
-        } else {
-            System.out.println("Test is wrong. Expected elements in find Max maps must be: " + expectedResult + " but, we have: " + actualResult);
-        }
+//        int expectedResult = 1;
+//        int actualResult = counter.findMaxString().size();
+//        if (expectedResult == actualResult) {
+//            System.out.println("Test is correct.");
+//        } else {
+//            System.out.println("Test is wrong. Expected elements in find Max maps must be: " + expectedResult + " but, we have: " + actualResult);
+//        }
    }
 }

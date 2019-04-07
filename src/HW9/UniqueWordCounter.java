@@ -1,6 +1,8 @@
 package HW9;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class UniqueWordCounter {
@@ -28,16 +30,15 @@ public class UniqueWordCounter {
 
     }
 
-    public Map<String, Integer> findMaxString() {
-        Map<String,Integer> maxString = new HashMap<>();
+    public List<String> findMaxString() {//
+        List<String> maxString = new ArrayList<>();
         int max = 0;
         for (Map.Entry<String, Integer> entry : stringOfWords.entrySet()) {
             for (int value : stringOfWords.values()) {
                 if (value > max) {
                     max = value;
-                  maxString.put(entry.getKey(),max);
-
-                }
+                    maxString.add(entry.getKey());
+             }
             }
         }
        return maxString;
