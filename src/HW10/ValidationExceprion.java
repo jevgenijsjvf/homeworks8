@@ -1,8 +1,6 @@
 package HW10;
 
-import javax.xml.bind.ValidationException;
-
-public class ValidationExceprion extends ValidationException {
+public class ValidationExceprion extends RuntimeException {
 
 
     public ValidationExceprion(String message) {
