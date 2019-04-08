@@ -30,18 +30,20 @@ public class UniqueWordCounter {
 
     }
 
-    public List<String> findMaxString() {//
+    public String findMaxString() {//List<String>
         List<String> maxString = new ArrayList<>();
         int max = 0;
+        String word="";
         for (Map.Entry<String, Integer> entry : stringOfWords.entrySet()) {
             for (int value : stringOfWords.values()) {
                 if (value > max) {
                     max = value;
                     maxString.add(entry.getKey());
+                    word = entry.getKey();
              }
             }
         }
-       return maxString;
+       return word;
     }
 
 
